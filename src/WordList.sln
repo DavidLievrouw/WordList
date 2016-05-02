@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList.Data", "WordList.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList.Processing", "WordList.Processing\WordList.Processing.csproj", "{9C1330E9-5458-4CA2-AC04-16C7157BEA75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList.Tests", "WordList.Tests\WordList.Tests.csproj", "{27F39815-24DE-4EA7-AF55-29E7BD7800D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F39815-24DE-4EA7-AF55-29E7BD7800D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F39815-24DE-4EA7-AF55-29E7BD7800D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F39815-24DE-4EA7-AF55-29E7BD7800D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F39815-24DE-4EA7-AF55-29E7BD7800D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
