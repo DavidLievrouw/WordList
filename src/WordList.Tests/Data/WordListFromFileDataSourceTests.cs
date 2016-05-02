@@ -54,6 +54,32 @@ namespace WordList.Tests.Data {
           .EquivalentTo(expected)
           .Using(WordDataRecordComparison));
       }
+
+      [Test]
+      public void FiltersOutNullEmptyAndWhiteSpaceLines() {
+        var fileLines = new[] {
+          "FirstLine",
+          "SecondLine",
+          null,
+          string.Empty,
+          " ",
+          "  " + Environment.NewLine,
+          "ThirdLine"
+        };
+        A.CallTo(() => _fileReader.ReadAllLines(_file.FullName)).Returns(fileLines);
+
+        var expected = new[] {
+          new WordDataRecord { Value = "FirstLine" },
+          new WordDataRecord { Value = "SecondLine" },
+          new WordDataRecord { Value = "ThirdLine" }
+        };
+
+        var actual = _sut.LoadAll();
+
+        Assert.That(actual, Is
+          .EquivalentTo(expected)
+          .Using(WordDataRecordComparison));
+      }
     }
 
     static readonly Func<WordDataRecord, WordDataRecord, bool> WordDataRecordComparison = (actual, expected) => actual.Value == expected.Value;

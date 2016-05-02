@@ -18,6 +18,7 @@ namespace WordList.Data {
     public IEnumerable<WordDataRecord> LoadAll() {
       return _fileReader
         .ReadAllLines(_file.FullName)
+        .Where(line => !string.IsNullOrWhiteSpace(line))
         .Select(line => new WordDataRecord { Value = line });
     }
   }
