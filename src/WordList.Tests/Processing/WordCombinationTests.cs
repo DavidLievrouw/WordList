@@ -37,6 +37,32 @@ namespace WordList.Tests.Processing {
     }
 
     [TestFixture]
+    public class Length : WordCombinationTests {
+      [TestCase("123", "45 ", 6)]
+      [TestCase("12345", " 789", 9)]
+      [TestCase("1", "2", 2)]
+      [TestCase(" 123 ", "4", 6)]
+      public void Length_ReturnsLengthOfValue(string value1, string value2, int expectedLength) {
+        var sut = new WordCombination(new Word(value1), new Word(value2));
+        var actual = sut.Length;
+        Assert.That(actual, Is.EqualTo(expectedLength));
+      }
+    }
+
+    [TestFixture]
+    public class Value : WordCombinationTests {
+      [TestCase("123", "45 ", "12345 ")]
+      [TestCase("12345", " 789", "12345 789")]
+      [TestCase("1", "2", "12")]
+      [TestCase(" 123 ", "4", " 123 4")]
+      public void Length_ReturnsLengthOfValue(string value1, string value2, string expectedValue) {
+        var sut = new WordCombination(new Word(value1), new Word(value2));
+        var actual = sut.Value;
+        Assert.That(actual, Is.EqualTo(expectedValue));
+      }
+    }
+
+    [TestFixture]
     public class Equality : WordCombinationTests {
       [Test]
       public void IsNotEqualToNull() {
@@ -88,6 +114,16 @@ namespace WordList.Tests.Processing {
       public void SubTypeWithEqualWords_AreEqual() {
         var obj1 = new WordCombination(_word1, _word2);
         var obj2 = new SubTypeOfWordCombination(_word1, _word2);
+
+        Assert.That(obj1.Equals(obj2));
+        Assert.That(obj1 == obj2);
+        Assert.That(obj1.GetHashCode() == obj2.GetHashCode());
+      }
+      
+      [Test]
+      public void IWordEqualValue_AreEqual() {
+        var obj1 = new Word("AABB");
+        IWord obj2 = new WordCombination(new Word("AA"), new Word("BB"));
 
         Assert.That(obj1.Equals(obj2));
         Assert.That(obj1 == obj2);

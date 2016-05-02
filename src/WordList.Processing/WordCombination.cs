@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace WordList.Processing {
-  public class WordCombination {
+  public class WordCombination : IWord, IEquatable<IWord> {
     readonly Word _word1;
     readonly Word _word2;
 
@@ -12,33 +12,35 @@ namespace WordList.Processing {
       _word2 = word2;
     }
 
+    public bool Equals(IWord other) {
+      if (ReferenceEquals(null, other)) return false;
+      return ReferenceEquals(this, other) || string.Equals(Value, other.Value);
+    }
+
     public override string ToString() {
       return $"{_word1.Value} + {_word2.Value} => {_word1.Value + _word2.Value}";
     }
 
-    protected bool Equals(WordCombination other) {
-      return _word1.Equals(other._word1) && _word2.Equals(other._word2);
-    }
-
     public override bool Equals(object obj) {
-      if (ReferenceEquals(null, obj)) return false;
-      if (ReferenceEquals(this, obj)) return true;
-      var other = obj as WordCombination;
-      return other != null && Equals(other);
+      return Equals(obj as IWord);
     }
 
     public override int GetHashCode() {
-      unchecked {
-        return (_word1.GetHashCode()*397) ^ _word2.GetHashCode();
-      }
+      return Value.GetHashCode();
     }
 
-    public static bool operator ==(WordCombination left, WordCombination right) {
-      return Equals(left, right);
+    public static bool operator ==(WordCombination left, IWord right) {
+      if (ReferenceEquals(null, left) && ReferenceEquals(null, right)) return true;
+      return !ReferenceEquals(null, left) && left.Equals(right);
     }
 
-    public static bool operator !=(WordCombination left, WordCombination right) {
-      return !Equals(left, right);
+    public static bool operator !=(WordCombination left, IWord right) {
+      if (ReferenceEquals(null, left) && ReferenceEquals(null, right)) return false;
+      if (ReferenceEquals(null, left)) return true;
+      return !left.Equals(right);
     }
+
+    public string Value => _word1.ToString() + _word2.ToString();
+    public int Length => _word1.Length + _word2.Length;
   }
 }

@@ -76,6 +76,19 @@ namespace WordList.Tests.Processing {
     }
 
     [TestFixture]
+    public class Length : WordTests {
+      [TestCase("12345", 5)]
+      [TestCase("12345 789", 9)]
+      [TestCase("1", 1)]
+      [TestCase(" 123 ", 5)]
+      public void Length_ReturnsLengthOfValue(string value, int expectedLength) {
+        var sut = new Word(value);
+        var actual = sut.Length;
+        Assert.That(actual, Is.EqualTo(expectedLength));
+      }
+    }
+
+    [TestFixture]
     public class Equality : WordTests {
       [Test]
       public void IsNotEqualToNull() {
@@ -127,6 +140,16 @@ namespace WordList.Tests.Processing {
       public void SubTypeWithEqualWords_AreEqual() {
         var obj1 = new Word("MyValue1");
         var obj2 = new SubTypeOfWord("MyValue1");
+
+        Assert.That(obj1.Equals(obj2));
+        Assert.That(obj1 == obj2);
+        Assert.That(obj1.GetHashCode() == obj2.GetHashCode());
+      }
+
+      [Test]
+      public void IWordEqualValue_AreEqual() {
+        var obj1 = new WordCombination(new Word("AA"), new Word("BB"));
+        IWord obj2 = new Word("AABB");
 
         Assert.That(obj1.Equals(obj2));
         Assert.That(obj1 == obj2);
