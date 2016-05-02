@@ -6,11 +6,12 @@ using WordList.Processing;
 namespace WordList.Tests.Processing {
   [TestFixture]
   public class WordCombinationFinderTests {
-    int _desiredLength = 6;
+    int _desiredLength;
     WordCombinationFinder _sut;
 
     [SetUp]
     public virtual void SetUp() {
+      _desiredLength = 6;
       _sut = new WordCombinationFinder(_desiredLength);
     }
 
