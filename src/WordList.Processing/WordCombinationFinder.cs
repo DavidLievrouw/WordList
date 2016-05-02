@@ -24,11 +24,24 @@ namespace WordList.Processing {
           .SelectMany(word => wordsByLength[_desiredLength - i]
             .Select(otherWord => new WordCombination(word, otherWord))));
 
+      // HashSet with WordEqualityComparer as performance optimization
+      var wordEqualityComparer = new WordEqualityComparer();
+      var wordsWithDesiredLengthSet = new HashSet<Word>(wordsWithDesiredLength, wordEqualityComparer);
       var combinationsThatAppearInTheList = allPossibleCombinationsWithDesiredLength
-        .Where(combination => wordsWithDesiredLength
-          .Any(wordWithDesiredLength => combination.Value.Equals(wordWithDesiredLength.Value)));
+        .Where(combination => wordsWithDesiredLengthSet.Contains(new Word(combination.Value)));
 
       return combinationsThatAppearInTheList.Distinct();
+    }
+
+    class WordEqualityComparer : IEqualityComparer<IWord> {
+      public bool Equals(IWord x, IWord y) {
+        if (x == null && y == null) return true;
+        return x != null && x.Equals(y);
+      }
+
+      public int GetHashCode(IWord word) {
+        return word.GetHashCode();
+      }
     }
   }
 }
