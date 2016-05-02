@@ -42,5 +42,11 @@ namespace WordList.Processing {
     public static bool operator !=(WordCombination left, WordCombination right) {
       return !Equals(left, right);
     }
+
+    public static implicit operator Word(WordCombination combination) {
+      return ReferenceEquals(null, combination)
+        ? null
+        : new Word(combination.Value);
+    }
   }
 }

@@ -28,7 +28,7 @@ namespace WordList.Processing {
       var wordEqualityComparer = new WordEqualityComparer();
       var wordsWithDesiredLengthSet = new HashSet<Word>(wordsWithDesiredLength, wordEqualityComparer);
       var combinationsThatAppearInTheList = allPossibleCombinationsWithDesiredLength
-        .Where(combination => wordsWithDesiredLengthSet.Contains(new Word(combination.Value)));
+        .Where(combination => wordsWithDesiredLengthSet.Contains(combination));
 
       return combinationsThatAppearInTheList.Distinct();
     }
