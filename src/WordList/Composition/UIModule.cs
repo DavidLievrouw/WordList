@@ -13,6 +13,10 @@ namespace WordList.Composition {
       builder.RegisterType<ConsoleWordCombinationsOutputWriter>()
         .AsImplementedInterfaces()
         .SingleInstance();
+
+      builder.RegisterType<WordListProgram>()
+        .AsImplementedInterfaces()
+        .SingleInstance();
     }
   }
 }

@@ -53,12 +53,14 @@
     <Compile Include="Composition\ProcessingModule.cs" />
     <Compile Include="Composition\CompositionRoot.cs" />
     <Compile Include="ExtensionsForIEnumerable.cs" />
+    <Compile Include="IWordListProgram.cs" />
     <Compile Include="Output\IConsole.cs" />
     <Compile Include="Output\IWordCombinationsOutputWriter.cs" />
     <Compile Include="Output\RealConsole.cs" />
     <Compile Include="Output\ConsoleWordCombinationsOutputWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordListProgram.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wordlist.txt">

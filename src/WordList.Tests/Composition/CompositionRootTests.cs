@@ -2,8 +2,6 @@
 using Autofac;
 using NUnit.Framework;
 using WordList.Composition;
-using WordList.Output;
-using WordList.Processing;
 
 namespace WordList.Tests.Composition {
   [TestFixture]
@@ -20,9 +18,7 @@ namespace WordList.Tests.Composition {
       _container.Dispose();
     }
     
-    [TestCase(typeof(IWordListReader))]
-    [TestCase(typeof(IWordCombinationFinder))]
-    [TestCase(typeof(IWordCombinationsOutputWriter))]
+    [TestCase(typeof(IWordListProgram))]
     public void RegistersStuffCorrectly(Type typeToCheck) {
       object actualResult = null;
       Assert.DoesNotThrow(() => actualResult = _container.Resolve(typeToCheck));
@@ -30,9 +26,7 @@ namespace WordList.Tests.Composition {
       Assert.That(actualResult, Is.AssignableTo(typeToCheck));
     }
 
-    [TestCase(typeof(IWordListReader))]
-    [TestCase(typeof(IWordCombinationFinder))]
-    [TestCase(typeof(IWordCombinationsOutputWriter))]
+    [TestCase(typeof(IWordListProgram))]
     public void RegistersStuffAsSingleton(Type typeToCheck) {
       var actualResult1 = _container.Resolve(typeToCheck);
       var actualResult2 = _container.Resolve(typeToCheck);
