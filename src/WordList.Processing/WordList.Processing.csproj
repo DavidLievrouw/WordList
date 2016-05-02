@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IWord.cs" />
     <Compile Include="IWordCombinationFinder.cs" />
     <Compile Include="IWordListReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

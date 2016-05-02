@@ -37,19 +37,6 @@ namespace WordList.Tests.Processing {
     }
 
     [TestFixture]
-    public class Length : WordCombinationTests {
-      [TestCase("123", "45 ", 6)]
-      [TestCase("12345", " 789", 9)]
-      [TestCase("1", "2", 2)]
-      [TestCase(" 123 ", "4", 6)]
-      public void Length_ReturnsLengthOfValue(string value1, string value2, int expectedLength) {
-        var sut = new WordCombination(new Word(value1), new Word(value2));
-        var actual = sut.Length;
-        Assert.That(actual, Is.EqualTo(expectedLength));
-      }
-    }
-
-    [TestFixture]
     public class Value : WordCombinationTests {
       [TestCase("123", "45 ", "12345 ")]
       [TestCase("12345", " 789", "12345 789")]

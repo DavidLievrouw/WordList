@@ -2,7 +2,7 @@
 using WordList.Data;
 
 namespace WordList.Processing {
-  public class Word : IWord {
+  public class Word {
     public Word(string value) {
       if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value));
       Value = value;

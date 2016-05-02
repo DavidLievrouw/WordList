@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace WordList.Processing {
-  public class WordCombination : IWord {
+  public class WordCombination {
     readonly Word _left;
     readonly Word _right;
 
@@ -13,7 +13,6 @@ namespace WordList.Processing {
     }
 
     public string Value => _left.ToString() + _right.ToString();
-    public int Length => _left.Length + _right.Length;
 
     public override string ToString() {
       return $"{_left.Value} + {_right.Value} => {_left.Value + _right.Value}";

@@ -33,13 +33,13 @@ namespace WordList.Processing {
       return combinationsThatAppearInTheList.Distinct();
     }
 
-    class WordEqualityComparer : IEqualityComparer<IWord> {
-      public bool Equals(IWord x, IWord y) {
+    class WordEqualityComparer : IEqualityComparer<Word> {
+      public bool Equals(Word x, Word y) {
         if (x == null && y == null) return true;
         return x != null && x.Equals(y);
       }
 
-      public int GetHashCode(IWord word) {
+      public int GetHashCode(Word word) {
         return word.GetHashCode();
       }
     }
