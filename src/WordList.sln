@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList", "WordList\WordList.csproj", "{D132106F-6430-469E-B2F6-4A661761B03E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList.Data", "WordList.Data\WordList.Data.csproj", "{AB4937C0-332A-49BE-8A3B-A1274FAF031A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordList.Processing", "WordList.Processing\WordList.Processing.csproj", "{9C1330E9-5458-4CA2-AC04-16C7157BEA75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D132106F-6430-469E-B2F6-4A661761B03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D132106F-6430-469E-B2F6-4A661761B03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D132106F-6430-469E-B2F6-4A661761B03E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4937C0-332A-49BE-8A3B-A1274FAF031A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4937C0-332A-49BE-8A3B-A1274FAF031A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4937C0-332A-49BE-8A3B-A1274FAF031A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4937C0-332A-49BE-8A3B-A1274FAF031A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1330E9-5458-4CA2-AC04-16C7157BEA75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
