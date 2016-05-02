@@ -5,10 +5,7 @@ using WordList.Composition;
 namespace WordList {
   public class Program {
     public static void Main(string[] args) {
-      var compositionRoot = CompositionRoot.Compose();
-      var wordListProgram = compositionRoot.Resolve<IWordListProgram>();
-      wordListProgram.Run();
-
+      CompositionRoot.Compose().Resolve<IWordListProgram>().Run();
       Console.WriteLine("Press any key to quit...");
       Console.ReadKey();
     }
