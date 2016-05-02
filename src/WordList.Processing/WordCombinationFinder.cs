@@ -15,7 +15,7 @@ namespace WordList.Processing {
       if (words == null) throw new ArgumentNullException(nameof(words));
 
       var wordsByLength = words.ToLookup(w => w.Length);
-      IList<Word> wordsWithDesiredLength = wordsByLength[_desiredLength].ToList();
+      var wordsWithDesiredLength = wordsByLength[_desiredLength].ToList();
       if (!wordsWithDesiredLength.Any()) return Enumerable.Empty<WordCombination>();
 
       var allPossibleCombinationsWithDesiredLength = Enumerable

@@ -53,7 +53,6 @@
     <Compile Include="Processing\WordCombinationFinderTests.cs" />
     <Compile Include="Processing\WordCombinationTests.cs" />
     <Compile Include="Processing\WordListReaderTests.cs" />
-    <Compile Include="Processing\WordsWithDesiredLengthFinderTests.cs" />
     <Compile Include="Processing\WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
