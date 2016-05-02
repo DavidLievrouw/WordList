@@ -22,11 +22,7 @@ namespace WordList.Composition {
         .AsImplementedInterfaces()
         .SingleInstance();
 
-      builder.Register(ctx => new WordCombinationFinder(
-        ctx.Resolve<ProgramSettings>().DesiredWordLength,
-        ctx.Resolve<IWordsIndexFactory>(),
-        ctx.Resolve<IAllPossibleCombinationsFinder>(),
-        ctx.Resolve<IWordCombinationFilter>()))
+      builder.RegisterType<WordCombinationFinderFactory>()
         .AsImplementedInterfaces()
         .SingleInstance();
     }

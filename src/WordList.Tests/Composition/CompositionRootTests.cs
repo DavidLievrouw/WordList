@@ -2,6 +2,7 @@
 using Autofac;
 using NUnit.Framework;
 using WordList.Composition;
+using WordList.Processing;
 
 namespace WordList.Tests.Composition {
   [TestFixture]

@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using WordList.Data;
+using WordList.Processing;
 
 namespace WordList.Composition {
   public class DataModule : Module {
@@ -10,9 +11,7 @@ namespace WordList.Composition {
         .AsImplementedInterfaces()
         .SingleInstance();
 
-      builder.Register(ctx => new WordListFromFileDataSource(
-        ctx.Resolve<IFileReader>(),
-        ctx.Resolve<ProgramSettings>().WordListFile))
+      builder.RegisterType<WordListReaderFactory>()
         .AsImplementedInterfaces()
         .SingleInstance();
     }

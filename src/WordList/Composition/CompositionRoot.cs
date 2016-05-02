@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.IO;
 using Autofac;
+using WordList.Processing;
 
 namespace WordList.Composition {
   public static class CompositionRoot {

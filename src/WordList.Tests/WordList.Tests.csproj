@@ -60,8 +60,10 @@
     <Compile Include="Processing\AllPossibleCombinationsFinderTests.cs" />
     <Compile Include="Processing\FakeWordsIndex.cs" />
     <Compile Include="Processing\WordCombinationFilterTests.cs" />
+    <Compile Include="Processing\WordCombinationFinderFactoryTests.cs" />
     <Compile Include="Processing\WordCombinationFinderTests.cs" />
     <Compile Include="Processing\WordCombinationTests.cs" />
+    <Compile Include="Processing\WordListReaderFactoryTests.cs" />
     <Compile Include="Processing\WordListReaderTests.cs" />
     <Compile Include="Processing\WordsIndexFactoryTests.cs" />
     <Compile Include="Processing\WordsIndexTests.cs" />
