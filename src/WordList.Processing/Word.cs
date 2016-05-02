@@ -1,10 +1,17 @@
 ﻿using System;
+using WordList.Data;
 
 namespace WordList.Processing {
   public class Word {
     public Word(string value) {
       if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value));
       Value = value;
+    }
+
+    public Word(WordDataRecord dataRecord) {
+      if (dataRecord == null) throw new ArgumentNullException(nameof(dataRecord));
+      if (string.IsNullOrWhiteSpace(dataRecord.Value)) throw new ArgumentException($"The specified {dataRecord.GetType().Name} does not have a valid value.", nameof(dataRecord));
+      Value = dataRecord.Value;
     }
 
     public string Value { get; }
