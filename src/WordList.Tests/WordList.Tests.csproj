@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Processing\WordCombinationTests.cs" />
     <Compile Include="Processing\WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
