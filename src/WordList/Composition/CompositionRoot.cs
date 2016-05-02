@@ -12,13 +12,12 @@ namespace WordList.Composition {
     public static IContainer Compose(Configuration configuration) {
       var builder = new ContainerBuilder();
 
-      builder.Register(ctx => int.Parse(configuration.AppSettings.Settings["DesiredWordLength"].Value))
-        .Named<int>("AppSetting_DesiredWordLength")
+      builder.Register(ctx => new ProgramSettings {
+        DesiredWordLength = int.Parse(configuration.AppSettings.Settings["DesiredWordLength"].Value),
+        WordListFile = new FileInfo(configuration.AppSettings.Settings["WordListFile"].Value)
+      }).AsSelf()
         .SingleInstance();
-      builder.Register(ctx => new FileInfo(configuration.AppSettings.Settings["WordListFile"].Value))
-        .Named<FileInfo>("AppSetting_WordListFile")
-        .SingleInstance();
-      
+
       builder.RegisterModule<DataModule>();
       builder.RegisterModule<UIModule>();
       builder.RegisterModule<ProcessingModule>();

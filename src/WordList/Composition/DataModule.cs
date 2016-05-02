@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Autofac;
+﻿using Autofac;
 using WordList.Data;
 
 namespace WordList.Composition {
@@ -13,7 +12,7 @@ namespace WordList.Composition {
 
       builder.Register(ctx => new WordListFromFileDataSource(
         ctx.Resolve<IFileReader>(),
-        ctx.ResolveNamed<FileInfo>("AppSetting_WordListFile")))
+        ctx.Resolve<ProgramSettings>().WordListFile))
         .AsImplementedInterfaces()
         .SingleInstance();
     }

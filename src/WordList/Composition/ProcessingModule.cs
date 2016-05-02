@@ -23,7 +23,7 @@ namespace WordList.Composition {
         .SingleInstance();
 
       builder.Register(ctx => new WordCombinationFinder(
-        ctx.ResolveNamed<int>("AppSetting_DesiredWordLength"),
+        ctx.Resolve<ProgramSettings>().DesiredWordLength,
         ctx.Resolve<IWordsIndexFactory>(),
         ctx.Resolve<IAllPossibleCombinationsFinder>(),
         ctx.Resolve<IWordCombinationFilter>()))

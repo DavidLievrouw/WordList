@@ -19,6 +19,7 @@ namespace WordList.Tests.Composition {
     }
     
     [TestCase(typeof(IWordListProgram))]
+    [TestCase(typeof(ProgramSettings))]
     public void RegistersStuffCorrectly(Type typeToCheck) {
       object actualResult = null;
       Assert.DoesNotThrow(() => actualResult = _container.Resolve(typeToCheck));
@@ -27,6 +28,7 @@ namespace WordList.Tests.Composition {
     }
 
     [TestCase(typeof(IWordListProgram))]
+    [TestCase(typeof(ProgramSettings))]
     public void RegistersStuffAsSingleton(Type typeToCheck) {
       var actualResult1 = _container.Resolve(typeToCheck);
       var actualResult2 = _container.Resolve(typeToCheck);
