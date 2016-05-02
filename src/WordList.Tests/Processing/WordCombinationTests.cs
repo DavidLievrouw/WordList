@@ -121,7 +121,7 @@ namespace WordList.Tests.Processing {
       }
 
       class SubTypeOfWordCombination : WordCombination {
-        public SubTypeOfWordCombination(Word word1, Word word2) : base(word1, word2) {}
+        public SubTypeOfWordCombination(Word left, Word right) : base(left, right) {}
       }
     }
   }

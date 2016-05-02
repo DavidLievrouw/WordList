@@ -2,25 +2,25 @@
 
 namespace WordList.Processing {
   public class WordCombination : IWord {
-    readonly Word _word1;
-    readonly Word _word2;
+    readonly Word _left;
+    readonly Word _right;
 
-    public WordCombination(Word word1, Word word2) {
-      if (word1 == null) throw new ArgumentNullException(nameof(word1));
-      if (word2 == null) throw new ArgumentNullException(nameof(word2));
-      _word1 = word1;
-      _word2 = word2;
+    public WordCombination(Word left, Word right) {
+      if (left == null) throw new ArgumentNullException(nameof(left));
+      if (right == null) throw new ArgumentNullException(nameof(right));
+      _left = left;
+      _right = right;
     }
 
-    public string Value => _word1.ToString() + _word2.ToString();
-    public int Length => _word1.Length + _word2.Length;
+    public string Value => _left.ToString() + _right.ToString();
+    public int Length => _left.Length + _right.Length;
 
     public override string ToString() {
-      return $"{_word1.Value} + {_word2.Value} => {_word1.Value + _word2.Value}";
+      return $"{_left.Value} + {_right.Value} => {_left.Value + _right.Value}";
     }
 
     protected bool Equals(WordCombination other) {
-      return _word1.Equals(other._word1) && _word2.Equals(other._word2);
+      return _left.Equals(other._left) && _right.Equals(other._right);
     }
 
     public override bool Equals(object obj) {
@@ -32,7 +32,7 @@ namespace WordList.Processing {
 
     public override int GetHashCode() {
       unchecked {
-        return (_word1.GetHashCode()*397) ^ _word2.GetHashCode();
+        return (_left.GetHashCode()*397) ^ _right.GetHashCode();
       }
     }
 
