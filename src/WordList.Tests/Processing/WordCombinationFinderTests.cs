@@ -77,20 +77,16 @@ namespace WordList.Tests.Processing {
         var allWords = new[] {
           new Word("albums"),
           new Word("al"),
-          new Word("a"),
-          new Word("albums"),
-          new Word("u"),
-          new Word("ticket"),
-          new Word("foul"),
-          new Word("be"),
-          new Word("befoul"),
-          new Word("magazine"),
           new Word("bums"),
-          new Word("trump")
+          new Word("albums"),
+          new Word("a"),
+          new Word("lbums"),
+          new Word("al"),
+          new Word("bums")
         };
         var validCombinations = new[] {
           new WordCombination(new Word("al"), new Word("bums")),
-          new WordCombination(new Word("be"), new Word("foul"))
+          new WordCombination(new Word("a"), new Word("lbums"))
         };
 
         var actual = _sut.FindCombinations(allWords);

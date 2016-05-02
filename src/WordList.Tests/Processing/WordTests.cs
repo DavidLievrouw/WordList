@@ -146,16 +146,6 @@ namespace WordList.Tests.Processing {
         Assert.That(obj1.GetHashCode() == obj2.GetHashCode());
       }
 
-      [Test]
-      public void IWordEqualValue_AreEqual() {
-        var obj1 = new WordCombination(new Word("AA"), new Word("BB"));
-        IWord obj2 = new Word("AABB");
-
-        Assert.That(obj1.Equals(obj2));
-        Assert.That(obj1 == obj2);
-        Assert.That(obj1.GetHashCode() == obj2.GetHashCode());
-      }
-
       class SubTypeOfWord : Word {
         public SubTypeOfWord(string value) : base(value) {}
       }

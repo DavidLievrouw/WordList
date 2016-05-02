@@ -25,7 +25,8 @@ namespace WordList.Processing {
             .Select(otherWord => new WordCombination(word, otherWord))));
 
       var combinationsThatAppearInTheList = allPossibleCombinationsWithDesiredLength
-        .Where(combination => wordsWithDesiredLength.Contains((IWord)combination));
+        .Where(combination => wordsWithDesiredLength
+          .Any(wordWithDesiredLength => combination.Value.Equals(wordWithDesiredLength.Value)));
 
       return combinationsThatAppearInTheList.Distinct();
     }
