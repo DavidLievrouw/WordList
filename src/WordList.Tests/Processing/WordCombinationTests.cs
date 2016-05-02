@@ -26,6 +26,17 @@ namespace WordList.Tests.Processing {
     }
 
     [TestFixture]
+    public new class ToString : WordCombinationTests {
+      [Test]
+      public void ToString_ReturnsValue() {
+        var expected = $"{_word1.Value} + {_word2.Value} => {_word1.Value + _word2.Value}";
+        var sut = new WordCombination(_word1, _word2);
+        var actual = sut.ToString();
+        Assert.That(actual, Is.EqualTo(expected));
+      }
+    }
+
+    [TestFixture]
     public class Equality : WordCombinationTests {
       [Test]
       public void IsNotEqualToNull() {
