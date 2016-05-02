@@ -4,15 +4,15 @@ using System.Linq;
 using WordList.Processing;
 
 namespace WordList.Output {
-  public class WordCombinationOutputWriter : IWordCombinationOutputWriter {
+  public class ConsoleWordCombinationsOutputWriter : IWordCombinationsOutputWriter {
     readonly IConsole _console;
 
-    public WordCombinationOutputWriter(IConsole console) {
+    public ConsoleWordCombinationsOutputWriter(IConsole console) {
       if (console == null) throw new ArgumentNullException(nameof(console));
       _console = console;
     }
 
-    public void OutputWordCombinations(IEnumerable<WordCombination> wordCombinations) {
+    public void Write(IEnumerable<WordCombination> wordCombinations) {
       if (wordCombinations == null) throw new ArgumentNullException(nameof(wordCombinations));
 
       var materializedCombinations = wordCombinations.ToList();

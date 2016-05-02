@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Composition\CompositionRootTests.cs" />
     <Compile Include="Data\WordListFromFileDataSourceTests.cs" />
-    <Compile Include="Output\WordCombinationOutputWriterTests.cs" />
+    <Compile Include="Output\ConsoleWordCombinationsOutputWriterTests.cs" />
     <Compile Include="Processing\WordCombinationFinderTests.cs" />
     <Compile Include="Processing\WordCombinationTests.cs" />
     <Compile Include="Processing\WordListReaderTests.cs" />

@@ -7,35 +7,35 @@ using WordList.Processing;
 
 namespace WordList.Tests.Output {
   [TestFixture]
-  public class WordCombinationOutputWriterTests {
+  public class ConsoleWordCombinationsOutputWriterTests {
     IConsole _console;
-    WordCombinationOutputWriter _sut;
+    ConsoleWordCombinationsOutputWriter _sut;
 
     [SetUp]
     public virtual void SetUp() {
       _console = A.Fake<IConsole>();
-      _sut = new WordCombinationOutputWriter(_console);
+      _sut = new ConsoleWordCombinationsOutputWriter(_console);
     }
 
     [TestFixture]
-    public class Construction : WordCombinationOutputWriterTests {
+    public class Construction : ConsoleWordCombinationsOutputWriterTests {
       [Test]
       public void GivenNullConsole_Throws() {
-        Assert.Throws<ArgumentNullException>(() => new WordCombinationOutputWriter(null));
+        Assert.Throws<ArgumentNullException>(() => new ConsoleWordCombinationsOutputWriter(null));
       }
     }
 
     [TestFixture]
-    public class OutputWordCombinations : WordCombinationOutputWriterTests {
+    public class Write : ConsoleWordCombinationsOutputWriterTests {
       [Test]
       public void GivenNullWords_Throws() {
-        Assert.Throws<ArgumentNullException>(() => _sut.OutputWordCombinations(null));
+        Assert.Throws<ArgumentNullException>(() => _sut.Write(null));
       }
 
       [Test]
       public void WhenNoCombinationsAreSpecified_WritesNoneFoundMessageToConsole() {
         const string noCombinationsFoundMessage = "No combinations found";
-        _sut.OutputWordCombinations(Enumerable.Empty<WordCombination>());
+        _sut.Write(Enumerable.Empty<WordCombination>());
         A.CallTo(() => _console.WriteLine(noCombinationsFoundMessage)).MustHaveHappened();
       }
 
@@ -47,7 +47,7 @@ namespace WordList.Tests.Output {
           new WordCombination(new Word("Left2"), new Word("Right3")),
         };
 
-        _sut.OutputWordCombinations(foundCombinations);
+        _sut.Write(foundCombinations);
 
         foundCombinations.ForEach(combination => A.CallTo(() => _console.WriteLine(combination.ToString())).MustHaveHappened());
       }

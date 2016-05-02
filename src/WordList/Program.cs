@@ -11,11 +11,11 @@ namespace WordList {
 
       var wordListReader = compositionRoot.Resolve<IWordListReader>();
       var wordCombinationFinder = compositionRoot.Resolve<IWordCombinationFinder>();
-      var wordCombinationOutputWriter = compositionRoot.Resolve<IWordCombinationOutputWriter>();
+      var wordCombinationOutputWriter = compositionRoot.Resolve<IWordCombinationsOutputWriter>();
 
       var words = wordListReader.ReadWordList();
       var combinations = wordCombinationFinder.FindCombinations(words);
-      wordCombinationOutputWriter.OutputWordCombinations(combinations);
+      wordCombinationOutputWriter.Write(combinations);
 
       Console.WriteLine("Press any key to quit...");
       Console.ReadKey();

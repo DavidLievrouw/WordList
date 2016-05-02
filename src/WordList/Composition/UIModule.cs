@@ -10,7 +10,7 @@ namespace WordList.Composition {
         .AsImplementedInterfaces()
         .SingleInstance();
 
-      builder.RegisterType<WordCombinationOutputWriter>()
+      builder.RegisterType<ConsoleWordCombinationsOutputWriter>()
         .AsImplementedInterfaces()
         .SingleInstance();
     }
