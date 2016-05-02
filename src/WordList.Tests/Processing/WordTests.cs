@@ -25,8 +25,20 @@ namespace WordList.Tests.Processing {
       [Test]
       public void GivenValidValue_SetsProperty() {
         var theValue = "The word value!";
-        var actual = new Word(theValue);
-        Assert.That(actual.Value, Is.EqualTo(theValue));
+        var sut = new Word(theValue);
+        var actual = sut.Value;
+        Assert.That(actual, Is.EqualTo(theValue));
+      }
+    }
+
+    [TestFixture]
+    public new class ToString : WordTests {
+      [Test]
+      public void ToString_ReturnsValue() {
+        var theValue = "The word value!";
+        var sut = new Word(theValue);
+        var actual = sut.ToString();
+        Assert.That(actual, Is.EqualTo(theValue));
       }
     }
 
@@ -76,6 +88,20 @@ namespace WordList.Tests.Processing {
 
         Assert.That(!obj1.Equals(obj2));
         Assert.That(obj1 != obj2);
+      }
+
+      [Test]
+      public void SubTypeWithEqualWords_AreEqual() {
+        var obj1 = new Word("MyValue1");
+        var obj2 = new SubTypeOfWord("MyValue1");
+
+        Assert.That(obj1.Equals(obj2));
+        Assert.That(obj1 == obj2);
+        Assert.That(obj1.GetHashCode() == obj2.GetHashCode());
+      }
+
+      class SubTypeOfWord : Word {
+        public SubTypeOfWord(string value) : base(value) {}
       }
     }
   }

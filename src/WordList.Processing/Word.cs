@@ -9,6 +9,10 @@ namespace WordList.Processing {
 
     public string Value { get; }
 
+    public override string ToString() {
+      return Value;
+    }
+
     protected bool Equals(Word other) {
       return string.Equals(Value, other.Value);
     }
