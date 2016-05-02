@@ -44,6 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
+    <Compile Include="ExtensionsForIEnumerable.cs" />
+    <Compile Include="Output\IConsole.cs" />
+    <Compile Include="Output\IWordCombinationOutputWriter.cs" />
+    <Compile Include="Output\RealConsole.cs" />
+    <Compile Include="Output\WordCombinationOutputWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
