@@ -12,7 +12,12 @@ namespace WordList.Processing {
 
     public IWordListReader Create(ProgramSettings settings) {
       if (settings == null) throw new ArgumentNullException(nameof(settings));
-      return new WordListReader(new WordListFromFileDataSource(_fileReader, settings.WordListFile));
+
+      // Only the WordList from file is currently supported. Maybe insert Strategy pattern here?
+      return new WordListReader(
+        new WordListFromFileDataSource(
+          _fileReader,
+          settings.WordListFile));
     }
   }
 }
