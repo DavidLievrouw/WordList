@@ -41,13 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllPossibleCombinationsFinder.cs" />
+    <Compile Include="IAllPossibleCombinationsFinder.cs" />
+    <Compile Include="IWordCombinationFilter.cs" />
     <Compile Include="IWordCombinationFinder.cs" />
     <Compile Include="IWordListReader.cs" />
+    <Compile Include="IWordsIndex.cs" />
+    <Compile Include="IWordsIndexFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Word.cs" />
     <Compile Include="WordCombination.cs" />
+    <Compile Include="WordCombinationFilter.cs" />
     <Compile Include="WordCombinationFinder.cs" />
     <Compile Include="WordListReader.cs" />
+    <Compile Include="WordsIndex.cs" />
+    <Compile Include="WordsIndexFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WordList.Data\WordList.Data.csproj">

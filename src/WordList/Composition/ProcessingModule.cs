@@ -5,12 +5,28 @@ namespace WordList.Composition {
   public class ProcessingModule : Module {
     protected override void Load(ContainerBuilder builder) {
       base.Load(builder);
-      
+
       builder.RegisterType<WordListReader>()
         .AsImplementedInterfaces()
         .SingleInstance();
 
-      builder.Register(ctx => new WordCombinationFinder(ctx.ResolveNamed<int>("AppSetting_DesiredWordLength")))
+      builder.RegisterType<WordsIndexFactory>()
+        .AsImplementedInterfaces()
+        .SingleInstance();
+
+      builder.RegisterType<AllPossibleCombinationsFinder>()
+        .AsImplementedInterfaces()
+        .SingleInstance();
+
+      builder.RegisterType<WordCombinationFilter>()
+        .AsImplementedInterfaces()
+        .SingleInstance();
+
+      builder.Register(ctx => new WordCombinationFinder(
+        ctx.ResolveNamed<int>("AppSetting_DesiredWordLength"),
+        ctx.Resolve<IWordsIndexFactory>(),
+        ctx.Resolve<IAllPossibleCombinationsFinder>(),
+        ctx.Resolve<IWordCombinationFilter>()))
         .AsImplementedInterfaces()
         .SingleInstance();
     }

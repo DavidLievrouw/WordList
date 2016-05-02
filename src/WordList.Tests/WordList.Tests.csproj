@@ -57,9 +57,14 @@
     <Compile Include="Composition\CompositionRootTests.cs" />
     <Compile Include="Data\WordListFromFileDataSourceTests.cs" />
     <Compile Include="Output\ConsoleWordCombinationsOutputWriterTests.cs" />
+    <Compile Include="Processing\AllPossibleCombinationsFinderTests.cs" />
+    <Compile Include="Processing\FakeWordsIndex.cs" />
+    <Compile Include="Processing\WordCombinationFilterTests.cs" />
     <Compile Include="Processing\WordCombinationFinderTests.cs" />
     <Compile Include="Processing\WordCombinationTests.cs" />
     <Compile Include="Processing\WordListReaderTests.cs" />
+    <Compile Include="Processing\WordsIndexFactoryTests.cs" />
+    <Compile Include="Processing\WordsIndexTests.cs" />
     <Compile Include="Processing\WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordListProgramTests.cs" />
