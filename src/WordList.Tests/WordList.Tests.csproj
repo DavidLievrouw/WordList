@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Data\WordListFromFileDataSourceTests.cs" />
     <Compile Include="Processing\WordCombinationTests.cs" />
+    <Compile Include="Processing\WordListReaderTests.cs" />
     <Compile Include="Processing\WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
