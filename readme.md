@@ -42,5 +42,9 @@ we + aver => weaver
 - How would you go about making this project ultra-performant? 
 
 ### Change log
+v1.0.1 - 2016-05-12
+- Add license.
+- Implemented some minor refactoring suggestions.
+
 v1.0.0 - 2016-05-02
 - Initial release.
