@@ -41,6 +41,11 @@ we + aver => weaver
 - Use Dependency Injection / Inversion of Control?
 - How would you go about making this project ultra-performant? 
 
+### Notes about the code
+- This is an example solution. As with everything in the software development world, many of the choices are debatable.
+- This solution was created during several hours of refactoring and debating amongst colleagues. It seems to be humanly impossible to deliver this result in just 45 minutes (but never say never...). But it gives you a rough idea of our coding style. Giving only 45 minutes, gives us a descent idea of how you make difficult choices under time pressure.
+- We use AutoFac as a IoC container. This might seem as overkill for this kind of small solution (and it probably is). Again, it is intended to be representative for our code. But Poor Man's DI would have worked just fine.
+
 ### Change log
 v1.0.1 - 2016-05-12
 - Add license.
