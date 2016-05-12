@@ -48,8 +48,9 @@ we + aver => weaver
 
 ### Change log
 v1.0.1 - 2016-05-12
+- Bump version.
 - Add license.
-- Implemented some minor refactoring suggestions.
+- Add notes about the code to README.
 
 v1.0.0 - 2016-05-02
 - Initial release.
