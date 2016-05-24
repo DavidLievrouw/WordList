@@ -2,7 +2,7 @@
 
 Write a console application that processes a word list. The application should print all the 6-letter words from the list, that can be obtained by concatenating two other words from the list.
 
-An example: The word “albums” is printed, because the words “al”, “bums” and “albums” are in the word list.
+An example: The word â€œalbumsâ€ is printed, because the words â€œalâ€, â€œbumsâ€ and â€œalbumsâ€ are in the word list.
 
 Print the result as follows:
 
@@ -27,7 +27,7 @@ we + aver => weaver
 
 ### Timing
 - Expected duration: 45 min.
-- We’ll check every 15 minutes, to see how things are going.
+- Weâ€™ll check every 15 minutes, to see how things are going.
 - Not finished? No problem. The main focus of this assignment is to get an idea of your method of problem solving, and of your code style. Make sure that what you are coding, is something you are proud of.
 
 ### Additional questions
@@ -43,7 +43,7 @@ we + aver => weaver
 
 ### Notes about the code
 - This is an example solution. As with everything in the software development world, many of the choices are debatable.
-- This solution was created during several hours of refactoring and debating amongst colleagues. It seems to be humanly impossible to deliver this result in just 45 minutes (but never say never...). But it gives you a rough idea of our coding style. Giving only 45 minutes, gives us a descent idea of how you make difficult choices under time pressure.
+- This solution was created during several hours of refactoring and debating amongst colleagues. It seems to be humanly impossible to deliver this result in just 45 minutes (but never say never...). But it gives you a rough idea of our coding style. Giving only 45 minutes, gives us a decent idea of how you make difficult choices under time pressure.
 - We use AutoFac as a IoC container. This might seem as overkill for this kind of small solution (and it probably is). Again, it is intended to be representative for our code. But Poor Man's DI would have worked just fine.
 
 ### Change log
