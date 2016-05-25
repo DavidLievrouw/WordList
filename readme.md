@@ -34,12 +34,17 @@ we + aver => weaver
 - How did you begin to solve this problem? What were your first steps?
 - Do your classes follow the Single Responsibility Principle?
 - How would you have to change your code, to make it work with millions of words, instead of thousands?
+  - Use streams: This would avoid loading everything into memory, but it also would prevent using any optimizations.
+  - Use Hash tables: By dividing the source into different buckets, you can limit the amount of data that has to reside in memory.
 - What would you have to change when the length of the word changes?
 - If you had unlimited time, how would you improve your solution?
 - Can you draw a model of the ideal solution, in your opinion?
 - Could you identify reusable parts, and find good names for them?
+- Which parts of your code violate the best practices of Object Orientation?
 - Use Dependency Injection / Inversion of Control?
 - How would you go about making this project ultra-performant? 
+- Would you use a collection of String, or a collection of a custom Word class? Why?
+- How do you feel about the test? Did it allow you to show your potential or skills?
 
 ### Notes about the code
 - This is an example solution. As with everything in the software development world, many of the choices are debatable.
