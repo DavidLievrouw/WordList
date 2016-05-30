@@ -6,7 +6,7 @@ using NUnit.Framework;
 using WordList.Output;
 using WordList.Processing;
 
-namespace WordList.Tests {
+namespace WordList {
   [TestFixture]
   public class WordListProgramTests {
     IWordListReaderFactory _wordListReaderFactory;

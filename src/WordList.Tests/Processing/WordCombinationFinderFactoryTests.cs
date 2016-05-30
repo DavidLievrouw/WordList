@@ -2,9 +2,8 @@
 using System.IO;
 using FakeItEasy;
 using NUnit.Framework;
-using WordList.Processing;
 
-namespace WordList.Tests.Processing {
+namespace WordList.Processing {
   [TestFixture]
   public class WordCombinationFinderFactoryTests {
     IWordsIndexFactory _wordsIndexFactory;

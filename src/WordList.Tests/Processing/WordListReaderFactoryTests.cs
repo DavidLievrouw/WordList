@@ -3,9 +3,8 @@ using System.IO;
 using FakeItEasy;
 using NUnit.Framework;
 using WordList.Data;
-using WordList.Processing;
 
-namespace WordList.Tests.Processing {
+namespace WordList.Processing {
   [TestFixture]
   public class WordListReaderFactoryTests {
     IFileReader _fileReader;

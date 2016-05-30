@@ -2,10 +2,9 @@
 using System.Linq;
 using FakeItEasy;
 using NUnit.Framework;
-using WordList.Output;
 using WordList.Processing;
 
-namespace WordList.Tests.Output {
+namespace WordList.Output {
   [TestFixture]
   public class ConsoleWordCombinationsOutputWriterTests {
     IConsole _console;

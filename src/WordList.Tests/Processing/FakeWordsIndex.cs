@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WordList.Processing;
 
-namespace WordList.Tests.Processing {
+namespace WordList.Processing {
   public class FakeWordsIndex : IWordsIndex {
     readonly IEnumerable<Word> _allWords;
 

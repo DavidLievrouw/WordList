@@ -1,8 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
-using WordList.Processing;
 
-namespace WordList.Tests.Processing {
+namespace WordList.Processing {
   [TestFixture]
   public class WordCombinationTests {
     Word _word1;

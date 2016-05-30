@@ -2,9 +2,8 @@
 using System.IO;
 using FakeItEasy;
 using NUnit.Framework;
-using WordList.Data;
 
-namespace WordList.Tests.Data {
+namespace WordList.Data {
   [TestFixture]
   public class WordListFromFileDataSourceTests {
     IFileReader _fileReader;

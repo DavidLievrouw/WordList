@@ -7,7 +7,7 @@
     <ProjectGuid>{27F39815-24DE-4EA7-AF55-29E7BD7800D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WordList.Tests</RootNamespace>
+    <RootNamespace>WordList</RootNamespace>
     <AssemblyName>WordList.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
