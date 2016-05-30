@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 namespace WordList.Processing {
-  [TestFixture]
+  [TestFixture(Category = "Integration")]
   public class WordCombinationFinderTests {
     int _desiredLength;
     WordCombinationFinder _sut;
@@ -18,7 +18,7 @@ namespace WordList.Processing {
       _sut = new WordCombinationFinder(_desiredLength, _wordsIndexFactory, _allPossibleCombinationsFinder, _wordCombinationFilter);
     }
 
-    [TestFixture]
+    [TestFixture(Category = "Integration")]
     public class FindCombinations : WordCombinationFinderTests {
       [Test]
       public void GivenWordList_FindsValidCombinations() {

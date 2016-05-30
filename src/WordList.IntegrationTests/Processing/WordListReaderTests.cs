@@ -4,7 +4,7 @@ using NUnit.Framework;
 using WordList.Data;
 
 namespace WordList.Processing {
-  [TestFixture]
+  [TestFixture(Category = "Integration")]
   public class WordListReaderTests {
     FileInfo _sourceFile;
     FileReader _fileReader;
@@ -19,7 +19,7 @@ namespace WordList.Processing {
       _sut = new WordListReader(_wordListDataSource);
     }
 
-    [TestFixture]
+    [TestFixture(Category = "Integration")]
     public class ReadWordList : WordListReaderTests {
       [Test]
       public void ReturnsWordForEveryLineInFile() {
