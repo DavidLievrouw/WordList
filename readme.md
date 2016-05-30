@@ -52,6 +52,10 @@ we + aver => weaver
 - We use AutoFac as a IoC container. This might seem as overkill for this kind of small solution (and it probably is). Again, it is intended to be representative for our code. But Poor Man's DI would have worked just fine.
 
 ### Change log
+v1.0.2 - 2016-05-30
+- Bump version.
+- Add integration tests.
+
 v1.0.1 - 2016-05-12
 - Bump version.
 - Add license.
